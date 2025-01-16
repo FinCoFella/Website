@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap'); /* Import Questrial font */
+
+        /* Navigation Bar Styling */
+        .navbar {
+            background: white; /* Switch to white background */
+            padding: 10px; /* Adjust padding to make navbar more compact */
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+            position: fixed; /* Keep navbar at the top */
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure navbar is on top of other content */
+        }
+        .navdiv {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center the menu list */
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+            display: inline-block;
+            position: relative;
+        }
+        li a {
+            font-family: 'Questrial', sans-serif; /* Set font to Questrial */
+            color: #00aeef; /* Switch to navbar's blue color */
+            font-size: 18px; /* Reduce font size */
+            font-weight: normal; /* Set font weight to normal */
+            margin-right: 20px;
+            text-decoration: none;
+            line-height: 1.2; /* Adjust line-height to minimize vertical spacing */
+            padding: 5px 0; /* Minimize padding above and below */
+        }
+        li a:hover {
+            color: #00395d; /* Darker shade for hover effect */
+        }
+        /* Dropdown styles */
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #00aeef; /* Switch to navbar's blue color */
+            min-width: 150px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .dropdown li {
+            display: block;
+            margin: 0;
+            position: relative; /* Required for nested dropdowns */
+        }
+        .dropdown li a {
+            font-family: 'Questrial', sans-serif; /* Ensure dropdown uses Questrial font */
+            color: white; /* White for dropdown items */
+            font-weight: normal; /* Normal font weight */
+            font-size: 14px; /* Slightly smaller font size for dropdown items */
+            padding: 8px 15px; /* Compact padding for dropdown items */
+            display: block;
+        }
+        .dropdown li a:hover {
+            background-color: #00395d; /* Darker blue for hover effect */
+            color: white;
+        }
+        /* Show dropdown on hover */
+        li:hover .dropdown {
+            display: block;
+        }
+        /* Nested dropdown styles */
+        .dropdown .nested-dropdown {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%; /* Align nested dropdown to the right of its parent */
+            background-color: #00aeef; /* Switch to navbar's blue color */
+            min-width: 150px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .dropdown li:hover .nested-dropdown {
+            display: block;
+        }
+
+        /* Body Styling */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers content horizontally */
+            justify-content: center; /* Centers content vertically */
+            min-height: 100vh; /* Full viewport height */
+            margin: 0;
+            font-family: 'Questrial', sans-serif; /* Default font for body */
+            background-color: #f9f9f9; /* Light background color */
+            padding-top: 30px; /* Prevent content from overlapping the fixed navbar */
+        }
+
+        /* Centered message styling */
+        p {
+            font-family: 'Calibri Light', sans-serif; /* Change font to Calibri Light */
+            font-size: 18px; /* Adjust font size */
+            color: #333; /* Dark gray text color */
+            text-align: center; /* Center the text */
+            margin-bottom: 20px; /* Add space between message and button */
+        }
+
+        /* Button Styling */
+        .email-button {
+            font-family: 'Questrial', sans-serif; /* Apply Questrial font */
+            color: white; /* Text color */
+            background-color: #00aeef; /* Button background color */
+            border: none; /* Remove default border */
+            border-radius: 5px; /* Rounded corners */
+            padding: 10px 20px; /* Button padding */
+            font-size: 16px; /* Font size */
+            cursor: pointer; /* Pointer cursor for hover effect */
+            text-align: center; /* Center text alignment */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+        }
+
+        .email-button:hover {
+            background-color: #00395d; /* Darker shade on hover */
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow on hover */
+        }
+
+        /* Remove underline from link wrapping the button */
+        .email-button-link {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navdiv">
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                    <a href="#">Financials</a>
+                    <ul class="dropdown">
+                        <li>
+                            <a href="#">U.S. Banks</a>
+                            <ul class="nested-dropdown">
+                                <li><a href="#">Bank of America</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <a href="contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <a href="mailto:fincofella@fincofella.com?subject=Your%20Subject%20Here&body=Your%20Message%20Here" class="email-button-link">
+        <button type="button" class="email-button">
+            Send Email
+        </button>
+    </a>
+</body>
+</html>
